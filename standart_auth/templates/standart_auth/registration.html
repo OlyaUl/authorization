@@ -1,0 +1,16 @@
+{% extends 'standart_auth/index.html' %}
+{% block register %}
+<div id="register">
+       <h1>Register</h1>
+
+
+        <form id="user_form" method="post" action="{% url 'register_view' %}"
+                enctype="multipart/form-data">
+
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <input type="submit" name="submit" value="Register" />
+        </form>
+    </div>
+{% endblock %}
